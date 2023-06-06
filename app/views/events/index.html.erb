@@ -1,0 +1,9 @@
+<h1>Check out interesting events</h1>
+<ul>
+    <% @events.each do |event| %>
+        <li>
+            <%= link_to event.name, event_path(event) %>
+            <p><%= event.creater.name %></p>
+        </li>
+        <% end %>
+</ul>

@@ -6,7 +6,6 @@ class UserAttendancesController < ApplicationController
         user_attendance = UserAttendance.new(event_id: event.id, user_id: params[:user_id])
     
         if user_attendance.save
-            user_attendance.invited!
             flash[:notice] = "Invitation sent!"
             redirect_to events_path
         else

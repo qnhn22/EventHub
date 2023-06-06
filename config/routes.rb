@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   root "events#index"
 
   resources :events
-  resources :user_attendances
+  resources :users
+  resources :user_attendances, only: [:create, :destroy]
   # Defines the root path route ("/")
   # root "articles#index"
 end

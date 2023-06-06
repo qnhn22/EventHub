@@ -1,9 +1,39 @@
 <p>
     <%= @event.name %>
 </p>
+<p><small>Hosted by</small></p>
+<h4 class="subtitle is-4">
+    <%= @event.creater.name %>
+</h4>
 <p>
     <%= @event.date %>
 </p>
 <p>
     <%= @event.location %>
 </p>
+<div class="column">
+    <div class="dropdown is-hoverable">
+        <div class="dropdown-trigger">
+            <button class="button is-fullwidth" aria-haspopup="true" aria-controls="dropdown-menu3">
+                <span>Invitees: <%= @event.attendees.count %></span>
+            </button>
+        </div>
+        <div class="dropdown-menu" id="dropdown-menu6" role="menu">
+            <div class="dropdown-content">
+                <ul>
+
+                        <div class="dropdown-item">
+                            <% @event.attendees.each do |user| %>
+                                <li>
+                                    <p>
+                                        <%= user.name %>
+                                    </p>
+                                </li>
+                                <% end %>
+                        </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+

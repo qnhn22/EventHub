@@ -82,5 +82,5 @@ test:
 production:
   <<: *default
   database: private_events_production
-  username: quannguyenhn
+  username: private_events
   password: <%= ENV["DATABASE_PASSWORD"] %>
